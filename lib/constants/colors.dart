@@ -9,4 +9,4 @@ const Color tdBGColor = Color(0xFFEAEAEA);
 
 const Color tdYellow = Color(0xFFF3C539);
 const Color tdGreen = Color(0xFF30801E);
-const Color tdPink = Color(0xFFED74EC);
+const Color tdPurple = Color(0xFFA371F1);

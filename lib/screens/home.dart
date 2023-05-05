@@ -2,6 +2,7 @@
 import '../models/todo.dart';
 import '../widgets/todo_item.dart';*/
 
+import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/constants/colors.dart';
 import 'package:learn_flutter/models/todo.dart';
@@ -105,7 +106,12 @@ class _HomeState extends State<Home> {
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-                    _addToDoItem(_todoController.text);
+                    if (_todoController.text.isEmpty) {
+                      _showAwesomeSnackBar(ContentType.failure, 'Oh Hey!!',
+                          'Item name should not be Empty..! Please enter the ToDo Name.');
+                    } else {
+                      _addToDoItem(_todoController.text);
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: tdBlue,
@@ -212,4 +218,25 @@ class _HomeState extends State<Home> {
       _foundToDo = results;
     });
   }
+
+  void _showAwesomeSnackBar(mContentType, mTitle, mMessage) {
+    final snackBar = SnackBar(
+      elevation: 0,
+      behavior: SnackBarBehavior.floating,
+      backgroundColor: Colors.transparent,
+      content: AwesomeSnackbarContent(
+        title: mTitle,
+
+        message: mMessage,
+
+        //change contentType to ContentType.success, ContentType.failure, ContentType.warning or ContentType.help for variants.
+        contentType: mContentType,
+      ),
+    );
+
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(snackBar);
+  }
+
 }
