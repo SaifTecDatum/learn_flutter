@@ -190,6 +190,8 @@ class _HomeState extends State<Home> {
   void _deleteToDoItem(String id) {
     setState(() {
       todosList.removeWhere((item) => item.id == id);
+
+      _showAwesomeSnackBar(ContentType.success, 'Well done!', 'Your ToDo item has been Deleted Successfully.');
     });
   }
 
@@ -198,6 +200,9 @@ class _HomeState extends State<Home> {
       todosList.add(ToDo(
           id: DateTime.now().millisecondsSinceEpoch.toString(),
           todoText: toDo));
+
+      _showAwesomeSnackBar(ContentType.success, 'Congratulations!',
+          'You have Successfully created new ToDo item. Please continue working!');
     });
     _todoController.clear();
   }
