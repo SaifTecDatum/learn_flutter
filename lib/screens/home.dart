@@ -4,6 +4,7 @@ import '../widgets/todo_item.dart';*/
 
 import 'package:awesome_snackbar_content/awesome_snackbar_content.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:learn_flutter/constants/colors.dart';
 import 'package:learn_flutter/models/todo.dart';
 import 'package:learn_flutter/widgets/todo_item.dart';
@@ -46,12 +47,16 @@ class _HomeState extends State<Home> {
                     children: [
                       Container(
                         margin: const EdgeInsets.only(top: 50, bottom: 20),
-                        child: const Text(
+                        child: Text(
                           'All ToDos',
-                          style: TextStyle(
+
+                          style: GoogleFonts.aclonica(
                             fontSize: 30,
                             fontWeight: FontWeight.w500,
                           ),
+
+                          /*style: GoogleFonts.getFont('Aclonica',
+                              fontSize: 30, fontWeight: FontWeight.w500),*/
                         ),
                       ),
                       for (ToDo todoo in _foundToDo.reversed)
@@ -157,7 +162,7 @@ class _HomeState extends State<Home> {
 
   Widget searchBox() {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 5),
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(20)),
       child: TextField(
@@ -191,7 +196,8 @@ class _HomeState extends State<Home> {
     setState(() {
       todosList.removeWhere((item) => item.id == id);
 
-      _showAwesomeSnackBar(ContentType.success, 'Well done!', 'Your ToDo item has been Deleted Successfully.');
+      _showAwesomeSnackBar(ContentType.success, 'Well done!',
+          'Your ToDo item has been Deleted Successfully.');
     });
   }
 
@@ -243,5 +249,4 @@ class _HomeState extends State<Home> {
       ..hideCurrentSnackBar()
       ..showSnackBar(snackBar);
   }
-
 }
