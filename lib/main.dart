@@ -22,11 +22,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Learn Flutter - ToDo App',
 
-      /*theme: ThemeData(
+/*theme: ThemeData(
         textTheme: GoogleFonts.aclonicaTextTheme(
           Theme.of(context).textTheme,
         ),
-      ),*/  //To Reflect in the whole App Text fields with a FontFamily attribute at a Time.
+      ),*/ //To Reflect in the whole App Text fields with a FontFamily attribute at a Time.
 
       home: Home(),
     );

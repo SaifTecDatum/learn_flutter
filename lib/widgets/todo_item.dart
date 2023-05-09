@@ -21,7 +21,9 @@ class ToDoItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
+
       child: ListTile(
+
         onTap: () {
           //print('Clicked on _ToDo Item..!');
           onToDoChanged(toDo);

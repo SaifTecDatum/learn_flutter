@@ -44,12 +44,12 @@ class _HomeState extends State<Home> {
                 searchBox(),
                 Expanded(
                   child: ListView(
+                    padding: const EdgeInsets.only(bottom: 40),
                     children: [
                       Container(
                         margin: const EdgeInsets.only(top: 50, bottom: 20),
                         child: Text(
                           'All ToDos',
-
                           style: GoogleFonts.aclonica(
                             fontSize: 30,
                             fontWeight: FontWeight.w500,
@@ -77,7 +77,7 @@ class _HomeState extends State<Home> {
               Expanded(
                 child: Container(
                   margin: const EdgeInsets.only(
-                    bottom: 20,
+                    bottom: 10,
                     right: 20,
                     left: 20,
                   ),
@@ -85,6 +85,7 @@ class _HomeState extends State<Home> {
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                   decoration: BoxDecoration(
                     color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
                     boxShadow: const [
                       BoxShadow(
                         color: Colors.grey,
@@ -93,7 +94,6 @@ class _HomeState extends State<Home> {
                         spreadRadius: 0.0,
                       ),
                     ],
-                    borderRadius: BorderRadius.circular(10),
                   ),
                   child: TextField(
                     controller: _todoController,
@@ -106,7 +106,7 @@ class _HomeState extends State<Home> {
               ),
               Container(
                 margin: const EdgeInsets.only(
-                  bottom: 20,
+                  bottom: 10,
                   right: 20,
                 ),
                 child: ElevatedButton(
